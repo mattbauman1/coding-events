@@ -5,12 +5,19 @@
     <title></title>
 </head>
 <body>
-    <h1>All Events</h1>
-    <p th:unless="${events} and ${events.size()}">No events!</p>
-    <ul>
-        <th:block th:each="event : ${events}">
-            <li th:text="${event}"></li>
+    <h1 align="center">All Events</h1>
+    <h2 th:unless="${events} and ${events.size()}" align="center">No events!</h2>
+    <table th:if="${events} and ${events.size()}" style="width:100%">
+        <tr>
+            <th>Event Name</th>
+            <th>Description of Event</th>
+        </tr>
+        <th:block th:each="event : ${events.keySet()}">
+            <tr>
+                <td th:text="${event}" align="center"></td>
+                <td th:text="${events.get(event)}" align="center"></td>
+            </tr>
         </th:block>
-    </ul>
+    </table>
 </body>
 </html>
