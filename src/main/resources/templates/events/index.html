@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
     <h1 align="center">All Events</h1>
+    <nav th:replace="fragments :: navigation"></nav>
     <h2 th:unless="${events} and ${events.size()}" align="center">No events!</h2>
     <table th:if="${events} and ${events.size()}" style="width:100%">
         <tr>
@@ -14,8 +12,8 @@
         </tr>
         <th:block th:each="event : ${events.keySet()}">
             <tr>
-                <td th:text="${event}" align="center"></td>
-                <td th:text="${events.get(event)}" align="center"></td>
+                <td th:text="${event}"></td>
+                <td th:text="${events.get(event)}"></td>
             </tr>
         </th:block>
     </table>
