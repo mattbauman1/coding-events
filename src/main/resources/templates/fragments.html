@@ -4,16 +4,19 @@
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title>Create Events</title>
-    <link th:href="/styles.css" rel="stylesheet" type="text/css"></link>
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css"></link>
 </head>
 
 <nav th:fragment="navigation">
-    <table>
+    <table style="width:100%">
         <tr>
             <th><a href="/">Home</a></th>
             <th><a href="/events">All Events</a></th>
             <th><a href="/events/create">Create Event</a></th>
         </tr>
     </table>
+    <br>
 </nav>
+<td th:fragment="address">My Cool Shop<br>123 Main St.<br>Collinsville, IL 62234</td>
+<td th:fragment="computerImage"><img th:src="@{/images/computer.jpg}" /></td>
 </html>

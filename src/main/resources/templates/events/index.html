@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body>
-    <h1 align="center">All Events</h1>
+    <h1>All Events</h1>
     <nav th:replace="fragments :: navigation"></nav>
-    <h2 th:unless="${events} and ${events.size()}" align="center">No events!</h2>
+    <h2 th:unless="${events} and ${events.size()}">No events!</h2>
     <table th:if="${events} and ${events.size()}" style="width:100%">
         <tr>
             <th>Event Name</th>
@@ -14,6 +14,8 @@
             <tr>
                 <td th:text="${event}"></td>
                 <td th:text="${events.get(event)}"></td>
+                <td th:replace="fragments :: address"></td>
+                <td th:replace="fragments :: computerImage"></td>
             </tr>
         </th:block>
     </table>
