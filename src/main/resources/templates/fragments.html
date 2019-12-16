@@ -4,15 +4,18 @@
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title>Create Events</title>
-    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css"></link>
+    <!--<link th:href="@{/styles.css}" rel="stylesheet" type="text/css"></link>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <nav th:fragment="navigation">
     <table style="width:100%">
-        <tr>
-            <th><a href="/">Home</a></th>
-            <th><a href="/events">All Events</a></th>
-            <th><a href="/events/create">Create Event</a></th>
+        <tr class="nav">
+            <th class="nav-item"><a href="/" class="nav-link">Home</a></th>
+            <th class="nav-item"><a href="/events" class="nav-link">All Events</a></th>
+            <th class="nav-item"><a href="/events/create" class="nav-link">Create Event</a></th>
+            <th class="nav-item"><a href="/events/delete" class="nav-link">Delete Events</a></th>
         </tr>
     </table>
     <br>

@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
     <h1>All Events</h1>
     <nav th:replace="fragments :: navigation"></nav>
     <h2 th:unless="${events} and ${events.size()}">No events!</h2>
-    <table th:if="${events} and ${events.size()}" style="width:100%">
+    <table th:if="${events} and ${events.size()}" style="width:100%" class="table table-striped">
         <tr>
+            <th>ID</th>
             <th>Event Name</th>
             <th>Description of Event</th>
         </tr>
-        <th:block th:each="event : ${events.keySet()}">
+        <!--<th:block th:each="event : ${events.keySet()}">
             <tr>
                 <td th:text="${event}"></td>
                 <td th:text="${events.get(event)}"></td>
                 <td th:replace="fragments :: address"></td>
                 <td th:replace="fragments :: computerImage"></td>
+            </tr>
+        </th:block>-->
+        <th:block th:each="event : ${events}">
+            <tr>
+                <td th:text="${event.id}"></td>
+                <td th:text="${event.name}"></td>
+                <td th:text="${event.description}"></td>
             </tr>
         </th:block>
     </table>
