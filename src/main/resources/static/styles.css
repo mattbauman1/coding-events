@@ -1,7 +1,7 @@
-td {
-text-align: center;
+body {
+    font-size: 14px;
 }
 
-h1, h2 {
-text-align: center;
+.error {
+    color: red;
 }
